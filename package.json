@@ -1,0 +1,31 @@
+{
+  "name": "namaste-food",
+  "version": "1.0.0",
+  "description": "This is a food delivery app by Durpin Thapa Magar",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durpintm/namaste-food.git"
+  },
+  "keywords": [
+    "Restaurant",
+    "Food"
+  ],
+  "author": "Durpin Thapa Magar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durpintm/namaste-food/issues"
+  },
+  "homepage": "https://github.com/durpintm/namaste-food#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
