@@ -30,6 +30,15 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="restro-container">
         <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
       </div>
     </div>
   );
@@ -38,7 +47,15 @@ const Body = () => {
 const RestaurantCard = () => {
   return (
     <div className="restro-card" style={styleCard}>
-      <h3>Namaste Food</h3>
+      <img
+        className="restro-logo"
+        alt="Burger"
+        src="https://b.zmtcdn.com/data/pictures/chains/3/17953943/816872e9f1fcc43304e21a0f050f5f21_o2_featured_v2.jpg?output-format=webp"
+      />
+      <h3>The Burger Club</h3>
+      <h4>Burger, Pizza, Asian</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 minutes</h4>
     </div>
   );
 };
