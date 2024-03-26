@@ -22,3 +22,14 @@
   padding: 10px;
   margin: 10px;
 }
+
+.restro-card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.search {
+  padding: 10px;
+  margin: 10px;
+}
