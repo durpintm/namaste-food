@@ -1,0 +1,2 @@
+Config Driven UI
+- A config-driven UI (User Interface) refers to a design approach where the UI is generated dynamically based on a predefined configuration. This configuration is typically structured in a format such as JSON, XML, or YAML and dictates various aspects of the UI such as layout, components, styles, and behaviors.
