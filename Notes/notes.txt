@@ -9,3 +9,12 @@ Two types of export/import
 -Named Export/import
 		- export const Component;
 		- import {Component} from "path";
+
+//React Hooks
+- Normal js utility functions
+- useState() => used to create superpowerful state variable in react
+- useEffect()
+- Whenever a state variable changes, react will re-render the component
+
+// How React works
+- Reconciliation Algorithm(ReactFiber)
