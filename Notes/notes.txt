@@ -23,3 +23,6 @@ Two types of export/import
 
 // useEffect
 => This hook will be called as soon as the component is rendered completely
+
+=> The component is re-rendered everytime whenever a state variable changes
+=> Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)

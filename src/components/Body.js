@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -17,6 +18,7 @@ const Body = () => {
     );
 
     const json = await response.json();
+
     setListOfRestaurants(
       // Optional chaining
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -25,11 +27,36 @@ const Body = () => {
 
   // Conditional Rendering
 
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // Filter the restaurant card and update the UI
+              const filteredRestaurants = listOfRestaurants.filter((restro) =>
+                restro.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase())
+              );
+
+              console.log(filteredRestaurants);
+              setListOfRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -43,9 +70,9 @@ const Body = () => {
         </button>
       </div>
       <div className="restro-container">
-        {listOfRestaurants.map((restro) => {
+        {listOfRestaurants?.map((restro) => {
           return (
-            <RestaurantCard key={restro.info.id} restroData={restro.info} />
+            <RestaurantCard key={restro.info.id} restroData={restro?.info} />
           );
         })}
       </div>
