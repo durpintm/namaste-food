@@ -5,14 +5,9 @@ const styleCard = {
 
 const RestaurantCard = (props) => {
   const { restroData } = props;
-  const {
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-    cloudinaryImageId,
-  } = restroData?.data;
+  const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
+    restroData;
+
   return (
     <div className="restro-card" style={styleCard}>
       <img
@@ -24,8 +19,8 @@ const RestaurantCard = (props) => {
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating} stars</h4>
-      <h4>₹{costForTwo / 100} for Two</h4>
-      <h4>{deliveryTime} minutes</h4>
+      <h4>{costForTwo} </h4>
+      <h4>{sla.deliveryTime} minutes</h4>
     </div>
   );
 };

@@ -18,3 +18,8 @@ Two types of export/import
 
 // How React works
 - Reconciliation Algorithm(ReactFiber)
+- Uses virtual DOM => is a representation of an actual DOM
+- React Component is an object which represents a virtual DOM
+
+// useEffect
+=> This hook will be called as soon as the component is rendered completely
