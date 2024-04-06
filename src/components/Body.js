@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -20,6 +21,10 @@ const Body = () => {
     const json = await response.json();
 
     setListOfRestaurants(
+      // Optional chaining
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
       // Optional chaining
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -50,8 +55,7 @@ const Body = () => {
                   .includes(searchText.toLowerCase())
               );
 
-              console.log(filteredRestaurants);
-              setListOfRestaurants(filteredRestaurants);
+              setFilteredRestaurants(filteredRestaurants);
             }}
           >
             Search
@@ -70,7 +74,7 @@ const Body = () => {
         </button>
       </div>
       <div className="restro-container">
-        {listOfRestaurants?.map((restro) => {
+        {filteredRestaurants?.map((restro) => {
           return (
             <RestaurantCard key={restro.info.id} restroData={restro?.info} />
           );
