@@ -32,3 +32,9 @@ Two types of export/import
 
 => The component is re-rendered everytime whenever a state variable changes
 => Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
+
+=> rafce -> creates a boilerplate component
+
+# Two types of routing in web apps
+=> Client side routing
+=> Server side routing
