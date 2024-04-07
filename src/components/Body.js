@@ -15,18 +15,20 @@ const Body = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await response.json();
-
+    // Optional chaining
     setListOfRestaurants(
-      // Optional chaining
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
     setFilteredRestaurants(
-      // Optional chaining
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -75,9 +77,7 @@ const Body = () => {
       </div>
       <div className="restro-container">
         {filteredRestaurants?.map((restro) => {
-          return (
-            <RestaurantCard key={restro.info.id} restroData={restro?.info} />
-          );
+          return <RestaurantCard key={restro.info.id} restroData={restro} />;
         })}
       </div>
     </div>
