@@ -12,9 +12,11 @@ Two types of export/import
 
 //React Hooks
 - Normal js utility functions
-- useState() => used to create superpowerful state variable in react
-- useEffect()
-- Whenever a state variable changes, react will re-render the component
+
+// useState()
+ => used to create superpowerful state variable in react
+ => Whenever a state variable changes/updates, react will re-render the component
+ => Do not use useState hook inside the conditional statements/loops/functions or outside of the component
 
 // How React works
 - Reconciliation Algorithm(ReactFiber)
@@ -23,6 +25,10 @@ Two types of export/import
 
 // useEffect
 => This hook will be called as soon as the component is rendered completely
+=> Two arguments -> callback function and dependency array(optional)
+=> If no dependency array -> useEffect is called on every render of the component
+=> If dependency array is empty = [] -> useEffect is called on initial render only (just once when the component is rendered for the first time)
+=> If dependency array is not empty like [btnName], useEffect will be called evertime btnName updates/changes
 
 => The component is re-rendered everytime whenever a state variable changes
 => Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
