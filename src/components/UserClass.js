@@ -5,42 +5,59 @@ class UserClass extends React.Component {
     super(props);
 
     this.state = {
-      count: 0,
-      number: 2,
+      userInfo: {
+        name: "John",
+        location: "Default",
+      },
     };
-    console.log("child constructor");
   }
 
-  componentDidMount() {
-    console.log("Child Component Did Mount");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/durpintm");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+  }
+
+  // Called when the state is updated with new data
+  componentDidUpdate() {
+    console.log("component did mount");
+  }
+
+  // Called when another component is rendered
+  // Used for clean up
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
   }
 
   render() {
-    const { name, location } = this.props;
-    const { count, number } = this.state;
-    console.log("child render");
-
+    const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
-        <h1>Count: {count}</h1>
-        <button
-          onClick={() => {
-            // Never update state variables directly
-            this.setState({
-              count: this.state.count + 1,
-              number: this.state.number + 1,
-            });
-          }}
-        >
-          Count Increase
-        </button>
-        <h1>Number: {number}</h1>
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h4>Contact: durpintm</h4>
+        <img src={avatar_url} />
       </div>
     );
   }
 }
 
 export default UserClass;
+
+/*
+** Mounting life cycle
+Constructor is called (dummy data)
+Render the component (Render happens with dummy data)
+  <html with dummy data/>
+component Did Mount
+  <API Call>
+  <this.setState> => updated with new data
+
+*****Update
+render(api data)
+<html is loaded with new api data>
+component Did Update
+ */

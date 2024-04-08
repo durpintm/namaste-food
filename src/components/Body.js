@@ -77,7 +77,7 @@ const Body = () => {
         {filteredRestaurants?.map((restro) => {
           return (
             <Link key={restro.info.id} to={"/restaurants/" + restro.info.id}>
-              <RestaurantCard restroData={restro} />;
+              <RestaurantCard restroData={restro} />
             </Link>
           );
         })}

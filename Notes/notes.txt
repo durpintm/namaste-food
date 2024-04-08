@@ -29,6 +29,14 @@ Two types of export/import
 => If no dependency array -> useEffect is called on every render of the component
 => If dependency array is empty = [] -> useEffect is called on initial render only (just once when the component is rendered for the first time)
 => If dependency array is not empty like [btnName], useEffect will be called evertime btnName updates/changes
+=> useEffect(() => {
+    // Do setup here (API calls, subscriptions, etc.)
+
+    // Cleanup function
+    return () => {
+      // Perform cleanup here (unsubscribe, clear timers, cancel requests, etc.)
+    };
+  }, [/* dependencies */]);
 
 => The component is re-rendered everytime whenever a state variable changes
 => Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
@@ -44,3 +52,11 @@ Two types of export/import
 # Never update state variables directly
 
 # componentDidMount => called when the render of the component is completed/ mounted successfully => used for api call
+=> componentDidMount is another lifecycle method in React for class components. It's executed after the component is mounted (i.e., added to the DOM), making it the perfect place to initiate API calls, set up subscriptions, or do any setup that requires a DOM node. This method is called only once in the lifecycle of a component, right after the initial render, making it analogous to the useEffect hook in functional components with an empty dependency array ([]).
+
+# componentDidUpdate
+=> Called when the state is updated with new data
+=> The componentDidUpdate method is called immediately after updating occurs. This method is not called for the initial render. It provides an opportunity to operate on the DOM when the component has been updated.
+
+# componentWillUnmount
+=> The componentWillUnmount method is called just before the component is unmounted and destroyed. This method is a good place to perform any necessary cleanup, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount.

@@ -26,9 +26,8 @@ const RestaurantMenu = () => {
     restroInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    restroInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    restroInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
-  console.log(itemCards);
 
   return (
     <div className="menu">
