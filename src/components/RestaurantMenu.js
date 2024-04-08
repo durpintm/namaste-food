@@ -38,7 +38,7 @@ const RestaurantMenu = () => {
         {costForTwoMessage}
       </h3>
       <ul>
-        {itemCards.map((item, index) => {
+        {itemCards?.map((item, index) => {
           return (
             <li key={index}>
               {item.card.info.name} - Rs.{" "}
