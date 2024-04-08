@@ -38,3 +38,9 @@ Two types of export/import
 # Two types of routing in web apps
 => Client side routing
 => Server side routing
+
+# For eposide 7 revision: view last 10 minutes of the video
+
+# Never update state variables directly
+
+# componentDidMount => called when the render of the component is completed/ mounted successfully => used for api call
