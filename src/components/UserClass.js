@@ -22,15 +22,15 @@ class UserClass extends React.Component {
   }
 
   // Called when the state is updated with new data
-  componentDidUpdate() {
-    console.log("component did mount");
-  }
+  // componentDidUpdate() {
+  //   console.log("component did mount");
+  // }
 
   // Called when another component is rendered
   // Used for clean up
-  componentWillUnmount() {
-    console.log("Component Will Unmount");
-  }
+  // componentWillUnmount() {
+  //   console.log("Component Will Unmount");
+  // }
 
   render() {
     const { name, location, avatar_url } = this.state.userInfo;

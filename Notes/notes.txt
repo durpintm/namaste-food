@@ -63,3 +63,10 @@ Two types of export/import
 
 # Custom Hooks
 
+# Chunking
+# Code Splitting
+# Dynamic Bundling
+# Lazy Loading
+# On demand loading
+# Dynamic import
+
