@@ -12,11 +12,16 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwoMessage } =
     restroInfo?.cards[2]?.card?.card?.info;
+  console.log(restroInfo);
+
+  let index = 4;
+  if (restroInfo?.cards[index]?.groupedCard == undefined) {
+    index = 5;
+  }
 
   const { itemCards } =
-    restroInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    restroInfo?.cards[index]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
-
   return (
     <div className="menu">
       <h1>{name}</h1>
