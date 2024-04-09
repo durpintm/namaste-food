@@ -60,3 +60,6 @@ Two types of export/import
 
 # componentWillUnmount
 => The componentWillUnmount method is called just before the component is unmounted and destroyed. This method is a good place to perform any necessary cleanup, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount.
+
+# Custom Hooks
+
