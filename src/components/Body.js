@@ -47,17 +47,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black shadow-sm rounded-sm"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-1 bg-green-100 m-4 shadow-md rounded-lg"
             onClick={() => {
               // Filter the restaurant card and update the UI
               const filteredRestaurants = listOfRestaurants.filter((restro) =>
@@ -72,24 +73,28 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
-            );
-            setListOfRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-1 bg-gray-100 shadow-md rounded-lg"
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.data.avgRating > 4
+              );
+              setListOfRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="restro-container">
+      <div className="m-2 flex flex-wrap justify-start">
         {filteredRestaurants?.map((restro) => {
           return (
-            <Link key={restro.info.id} to={"/restaurants/" + restro.info.id}>
-              <RestaurantCard restroData={restro} />
-            </Link>
+            <div className="m-4">
+              <Link key={restro.info.id} to={"/restaurants/" + restro.info.id}>
+                <RestaurantCard restroData={restro} />
+              </Link>
+            </div>
           );
         })}
       </div>
