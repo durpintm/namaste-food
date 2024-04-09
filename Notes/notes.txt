@@ -70,3 +70,10 @@ Two types of export/import
 # On demand loading
 # Dynamic import
 
+Ways of styling apps
+=> styled components
+=> Material UI
+=> Tailwind css
+=> React Bootstrap
+=> Ant design (React UI)
+=> Chakra UI (React UI)
