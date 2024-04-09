@@ -1,9 +1,12 @@
 import logo from "../../images/logo.webp";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 function Header() {
   const [btnName, setBtnName] = useState("Login");
+
+  const onlineStatus = useOnlineStatus();
 
   return (
     <>
@@ -13,6 +16,7 @@ function Header() {
         </div>
         <div className="nav-items">
           <ul>
+            <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
             <li>
               <Link to="/">Home</Link>
             </li>
