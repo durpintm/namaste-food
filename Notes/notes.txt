@@ -83,3 +83,4 @@ Two types of export/import
 
 # Controlled and Uncontrolled component
 # Lifting the state up
+# Props drilling
