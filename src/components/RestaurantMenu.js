@@ -41,7 +41,12 @@ const RestaurantMenu = () => {
         {costForTwoMessage}
       </p>
       {categories.map((category) => {
-        return <RestaurantCategory data={category?.card?.card} />;
+        return (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            data={category?.card?.card}
+          />
+        );
       })}
       {/* <ul>
         {itemCards?.map((item, index) => {
