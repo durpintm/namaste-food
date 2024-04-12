@@ -80,3 +80,6 @@ Two types of export/import
 
 # Higher component
 => Is a component that takes a component as an argument and returns a component
+
+# Controlled and Uncontrolled component
+# Lifting the state up
