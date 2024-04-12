@@ -14,10 +14,11 @@ class About extends Component {
       <div>
         <h1>About</h1>
         <h2>
-          LoggedIn User:
           <UserContext.Consumer>
             {(data) => (
-              <h1 className="text-xl text-bold">{data.loggedInUser}</h1>
+              <span className="text-xl text-bold">
+                LoggedIn User: {data.loggedInUser}
+              </span>
             )}
           </UserContext.Consumer>
         </h2>
