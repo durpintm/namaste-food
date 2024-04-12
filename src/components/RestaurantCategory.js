@@ -7,7 +7,7 @@ const RestaurantCategory = (props) => {
   const setShowIndex = props.setShowIndex;
 
   const handleClick = () => {
-    setShowIndex();
+    setShowIndex(showItems ? true : false);
   };
 
   return (
@@ -24,7 +24,7 @@ const RestaurantCategory = (props) => {
           <span>⬇️</span>
         </div>
         {/* Accordian Body */}
-        {!showItems && <ItemList items={data.itemCards} />}
+        {showItems && <ItemList items={data.itemCards} />}
       </div>
     </div>
   );
