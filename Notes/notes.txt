@@ -84,3 +84,15 @@ Two types of export/import
 # Controlled and Uncontrolled component
 # Lifting the state up
 # Props drilling
+
+# Redux Toolkit
+=> provides a large object to store data
+=> the store can be divided into slices based on features and functionality
+Eg: Cart in e-commerce
+- When you click an add button, it dispatches an event/action(dispatch)
+- The event/action then calls a function 
+- The function is responsible for changing the cart data
+- The function is called a reducer
+
+=> We use "selector" to read data from the store (subscribing to the store using the selector)
+=> Cart component is subscribed to the store using a selector
