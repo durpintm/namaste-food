@@ -96,3 +96,4 @@ Eg: Cart in e-commerce
 
 => We use "selector" to read data from the store (subscribing to the store using the selector)
 => Cart component is subscribed to the store using a selector
+=> Selector is a hook(which is a normal js function)
