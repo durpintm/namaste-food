@@ -97,3 +97,18 @@ Eg: Cart in e-commerce
 => We use "selector" to read data from the store (subscribing to the store using the selector)
 => Cart component is subscribed to the store using a selector
 => Selector is a hook(which is a normal js function)
+
+# Types of Testing (developer)
+- Unit Testing
+- Integration Testing
+- End to End Testing (e2e testing)
+
+# React Testing Library
+- based on JEST Testing Framework
+- Using babel for JEST
+
+# Setting up Testing in our approach
+- Install React Testing Library
+- Intalled JEST
+- Installed babel dependencies
+- Configure babel (babel.config.js)
