@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import RestaurantCard from "../components/RestaurantCard";
+import RestaurantCard, {
+  withPromotedLabel,
+} from "../components/RestaurantCard";
 import MOCK_DATA from "../mocks/restroCardMock.json";
 import "@testing-library/jest-dom";
 
@@ -11,4 +13,11 @@ it("Should render Restaurant Card component with props data", () => {
   expect(name).toBeInTheDocument();
 });
 
-it("Should render Restaurant Card component with Promoted Label", () => {});
+it("Should render Restaurant Card component with Promoted Label", () => {
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  render(<RestaurantCardPromoted restroData={MOCK_DATA} />);
+
+  const promoted = screen.getByText("Promoted");
+  expect(promoted).toBeInTheDocument();
+});
