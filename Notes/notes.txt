@@ -123,3 +123,5 @@ Eg: Cart in e-commerce
 - jest looks into this folder for test files
 - all files inside this folder are test files
 - __ => is known as dunder(two subsequent underscore)
+
+# HMR => Hot Module Replacement
