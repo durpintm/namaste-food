@@ -115,3 +115,8 @@ Eg: Cart in e-commerce
 - Configure parcel config file(.parcelrc) to disable default babel transpilation
 - Configuring jest (npx jest --init)
 - Install jsdom library
+
+# __tests__
+- jest looks into this folder for test files
+- all files inside this folder are test files
+- __ => is known as dunder(two subsequent underscore)
