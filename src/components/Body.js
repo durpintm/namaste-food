@@ -25,6 +25,7 @@ const Body = () => {
     );
 
     const json = await response.json();
+
     // Optional chaining
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -83,9 +84,9 @@ const Body = () => {
             className="px-4 py-1 bg-gray-100 shadow-md rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
-                (res) => res.data.avgRating > 4
+                (res) => res.info.avgRating > 4.2
               );
-              setListOfRestaurants(filteredList);
+              setFilteredRestaurants(filteredList);
             }}
           >
             Top Rated Restaurants
@@ -105,9 +106,9 @@ const Body = () => {
       <div className="m-2 flex flex-wrap justify-start">
         {filteredRestaurants?.map((restro) => {
           return (
-            <div className="m-4">
-              <Link key={restro.info.id} to={"/restaurants/" + restro.info.id}>
-                {restro.info.avgRating > 4.5 ? (
+            <div className="m-4" key={restro.info.id}>
+              <Link to={"/restaurants/" + restro.info.id}>
+                {restro.info.avgRating > 4.2 ? (
                   <RestaurantCardPromoted restroData={restro} />
                 ) : (
                   <RestaurantCard restroData={restro} />
