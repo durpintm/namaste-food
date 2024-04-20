@@ -112,3 +112,6 @@ Eg: Cart in e-commerce
 - Intalled JEST
 - Installed babel dependencies
 - Configure babel (babel.config.js)
+- Configure parcel config file(.parcelrc) to disable default babel transpilation
+- Configuring jest (npx jest --init)
+- Install jsdom library
