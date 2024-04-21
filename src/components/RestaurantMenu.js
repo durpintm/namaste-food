@@ -10,7 +10,6 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const restroInfo = useRestaurantMenu(resId);
-
   const [showIndex, setShowIndex] = useState(null);
 
   if (restroInfo === null) return <Shimmer />;

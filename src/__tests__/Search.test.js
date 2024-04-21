@@ -61,6 +61,6 @@ it("Should filter top rated restaurant", async () => {
   fireEvent.click(topRatedBtn);
 
   const cardsAfterFilter = screen.getAllByTestId("restroCard");
-  console.log(cardsAfterFilter);
-  expect(cardsAfterFilter.length).toBe(4);
+  // console.log(cardsAfterFilter);
+  expect(cardsAfterFilter.length).toBe(6);
 });

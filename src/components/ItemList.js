@@ -4,7 +4,7 @@ import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-
+  console.log(items);
   const handleAddItem = (item) => {
     const action = addItem(item);
     // Dispatch an action
@@ -15,6 +15,7 @@ const ItemList = ({ items }) => {
     <div>
       {items.map((item) => (
         <div
+          data-testid="foodItems"
           key={item?.card?.info?.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
         >

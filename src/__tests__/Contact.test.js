@@ -3,21 +3,21 @@ import Contact from "../components/Contact";
 import "@testing-library/jest-dom";
 
 describe("Contact Us Page Test Cases", () => {
-  beforeAll(() => {
-    console.log("Before all");
-  });
+  // beforeAll(() => {
+  //   console.log("Before all");
+  // });
 
-  afterAll(() => {
-    console.log("After all");
-  });
+  // afterAll(() => {
+  //   console.log("After all");
+  // });
 
-  beforeEach(() => {
-    console.log("Before each");
-  });
+  // beforeEach(() => {
+  //   console.log("Before each");
+  // });
 
-  afterEach(() => {
-    console.log("After each");
-  });
+  // afterEach(() => {
+  //   console.log("After each");
+  // });
 
   it("Should load headings contact us component", () => {
     render(<Contact />);
